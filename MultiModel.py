@@ -236,7 +236,7 @@ def upld_df(upld_file):
     #dataset
     st.subheader('1.Data Set')
     if upld_file is not None:
-        df = pd.read_csv(upld_file,axis=1)
+        df = pd.read_csv(upld_file)
         st.markdown('**1.1. Glimpse of Dataset**')
         st.write(df)
         build_model(df)
@@ -260,7 +260,7 @@ def upld_df_1_classifier(upld_file):
     #dataset
     st.subheader('1.Data Set')
     if upld_file is not None:
-        df = pd.read_csv(upld_file, axis=1)
+        df = pd.read_csv(upld_file)
         st.markdown('**1.1. Glimpse of Dataset**')
         st.write(df)
         build_model_1_classifier(df)
@@ -283,7 +283,7 @@ def upld_df_1_regressor(upld_file):
     #dataset
     st.subheader('1.Data Set')
     if upld_file is not None:
-        df = pd.read_csv(upld_file, axis=1)
+        df = pd.read_csv(upld_file)
         st.markdown('**1.1. Glimpse of Dataset**')
         st.write(df)
         build_model_1_regressor(df)
