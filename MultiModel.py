@@ -221,7 +221,7 @@ def build_model_1_regressor(df):
     err2 = (1/(2*m))*(mean_squared_error(y_test,y_pre1))
     st.info(err2)
 # heading
-image = Image.open('C:\pyhton\multimodel(2)\Purple Modern Best Portfolio LinkedIn Banner .png')
+image = Image.open('MultiModel/Purple Modern Best Portfolio LinkedIn Banner .png')
 st.image(image, use_column_width=True)
 
 #sidebar
