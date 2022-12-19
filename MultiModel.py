@@ -7,6 +7,7 @@ from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBClassifier,XGBRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.datasets import load_diabetes
+from sklearn.preprocessing import LabelEncoder
 
 @st.cache
 def convert_df(df):
@@ -237,9 +238,14 @@ def upld_df(upld_file):
     st.subheader('1.Data Set')
     if upld_file is not None:
         df = pd.read_csv(upld_file)
-        st.markdown('**1.1. Glimpse of Dataset**')
-        st.write(df)
-        build_model(df)
+        le = LabelEncoder()
+        # Fit the LabelEncoder object to the data
+        le.fit(df)
+        # Transform the data using the LabelEncoder object
+        df_encoded = le.transform(df)
+        st.markdown('**1.1. Glimpse of Dataset(encoded)**')
+        st.write(df_encoded)
+        build_model(df_encoded)
     else:
         st.info('Awaiting for CSV file to be uploaded.')
         if st.button('Press to use Example Dataset'):
@@ -261,8 +267,13 @@ def upld_df_1_classifier(upld_file):
     st.subheader('1.Data Set')
     if upld_file is not None:
         df = pd.read_csv(upld_file)
-        st.markdown('**1.1. Glimpse of Dataset**')
-        st.write(df)
+        le = LabelEncoder()
+        # Fit the LabelEncoder object to the data
+        le.fit(df)
+        # Transform the data using the LabelEncoder object
+        df_encoded = le.transform(df)
+        st.markdown('**1.1. Glimpse of Dataset(encoded)**')
+        st.write(df_encoded)
         build_model_1_classifier(df)
     else:
         st.info('Awaiting for CSV file to be uploaded.')
@@ -283,8 +294,13 @@ def upld_df_1_regressor(upld_file):
     #dataset
     st.subheader('1.Data Set')
     if upld_file is not None:
-        df = pd.read_csv(upld_file)
-        st.markdown('**1.1. Glimpse of Dataset**')
+        df = pd.read_csv(upld_file)  
+        le = LabelEncoder()
+        # Fit the LabelEncoder object to the data
+        le.fit(df)
+        # Transform the data using the LabelEncoder object
+        df_encoded = le.transform(df)
+        st.markdown('**1.1. Glimpse of Dataset(encoded)**')
         st.write(df)
         build_model_1_regressor(df)
     else:
