@@ -32,7 +32,7 @@ def build_model(df):
     st.write('X Variable')
     st.info(list(x_train.columns))
     st.write('Y Variable')
-    st.info(y_train.name)
+    st.info(list(y_train.columns))
 
     # model
     model  = RandomForestRegressor()
@@ -101,7 +101,7 @@ def build_model_1_classifier(df):
     st.write('X Variable')
     st.info(list(x_train.columns))
     st.write('Y Variable')
-    st.info(y_train.name)
+    st.info(list(y_train.columns))
 
     #model
     model = XGBClassifier()
@@ -170,7 +170,7 @@ def build_model_1_regressor(df):
     st.write('X Variable')
     st.info(list(x_train.columns))
     st.write('Y Variable')
-    st.info(y_train.name)
+    st.info(list(y_train.columns))
 
     #model
     model = XGBRegressor()
