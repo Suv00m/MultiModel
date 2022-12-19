@@ -243,8 +243,8 @@ def upld_df(upld_file):
         le.fit(df)
         # Transform the data using the LabelEncoder object
         df_encoded = le.transform(df)
-        st.markdown('**1.1. Glimpse of Dataset(encoded)**')
-        st.write(df_encoded)
+        st.markdown('**1.1. Glimpse of Dataset**')
+        st.write(df)
         build_model(df_encoded)
     else:
         st.info('Awaiting for CSV file to be uploaded.')
@@ -273,8 +273,8 @@ def upld_df_1_classifier(upld_file):
         # Transform the data using the LabelEncoder object
         df_encoded = le.transform(df)
         st.markdown('**1.1. Glimpse of Dataset(encoded)**')
-        st.write(df_encoded)
-        build_model_1_classifier(df)
+        st.write(df)
+        build_model_1_classifier(df_encoded)
     else:
         st.info('Awaiting for CSV file to be uploaded.')
         if st.button('Press to use Example Dataset'):
@@ -302,7 +302,7 @@ def upld_df_1_regressor(upld_file):
         df_encoded = le.transform(df)
         st.markdown('**1.1. Glimpse of Dataset(encoded)**')
         st.write(df)
-        build_model_1_regressor(df)
+        build_model_1_regressor(df_encoded)
     else:
         st.info('Awaiting for CSV file to be uploaded.')
         if st.button('Press to use Example Dataset'):
