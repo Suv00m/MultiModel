@@ -16,7 +16,7 @@ def convert_df(df):
 
 def build_model(df):
     X = df.iloc[:,:-1]
-    Y = df.iloc[:,-1]
+    Y = df.iloc[:,-1].values.ravel()
     
     # splitting  the data
     x_train,x_test,y_train,y_test=train_test_split(X,Y,test_size=(100-split_size)/100)
